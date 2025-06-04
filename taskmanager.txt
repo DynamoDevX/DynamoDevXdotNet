@@ -1,0 +1,4 @@
+- Write 1 blog
+- Write 2 blogs
+- Write 3 blogs
+- Implement the filtering algorithm

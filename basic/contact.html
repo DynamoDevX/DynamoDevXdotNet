@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to DynamoDevX.net, the place where DinamoDevX resides in">
+    <meta name="author" content="DinamoDevX">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../nahidwin.js"></script>
+    <title>DynamoDevX.net</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><h1>DynamoDevX.net</h1></a>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="PPandToS.html">PP and ToS</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>I see you wanna contact me...</h2>
+            <p>You can reach me on Matrix! Just add this address in Element or any other Matrix client:</p>
+            
+            <div class="matrix-address">
+                <code>@dinamodevx:matrix.org</code>
+                <button id="copyButton" onclick="copyMatrix()">Copy Address 📋</button>
+            </div>
+
+            <p>Never used Matrix before? Get started here:</p>
+            <ol>
+                <li>Download <a href="https://element.io/download" target="_blank" rel="noopener">Element</a> (recommended) or use another Matrix client</li>
+                <li>Create an account (you can use matrix.org or any other homeserver)</li>
+                <li>Click "Start Chat" and paste my address</li>
+            </ol>
+            
+            <p class="matrix-note">💡 Matrix has E2EE, which is cool I guess. oh and it collects minimal metadata. also its foss and foss = automatically good</p>
+        </section>
+    </main>
+    <script>
+        function copyMatrix() {
+            const button = document.getElementById('copyButton');
+            const originalText = button.textContent;
+            
+            navigator.clipboard.writeText('@dinamodevx:matrix.org')
+                .then(() => {
+                    button.textContent = 'Address Copied! 😄';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 750);
+                })
+                .catch(err => console.error('Failed to copy:', err, '😔'));
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 DinamoDevX | No rights reserved</p>
+        <p><span class="license">Code: Unlicense</span> • <span class="license">Content: CC0</span></p>
+    </footer>
+</body>
+</html>
